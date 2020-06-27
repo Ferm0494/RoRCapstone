@@ -4,12 +4,13 @@
     <title>CapstoneProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <h1 class="animate__animated animate__bounce">An animated element</h1>
     <%= yield %>
   </body>
 </html>

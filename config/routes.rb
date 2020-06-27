@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'session/new'
-  get 'session/create'
-  get 'users/new'
-  get 'users/create'
-  get 'users/show'
+  resources :user, only: [:new, :show]
+  resources :session, only: [:new, :create]
+  root "session#new" 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
