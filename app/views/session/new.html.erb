@@ -1,2 +1,16 @@
-<h1>Session#new</h1>
-<p>Find me in app/views/session/new.html.erb</p>
+
+<div class="big-container d-flex justify-content-center align-items-center ">
+<div class="container-fluid   d-flex justify-content-md-center justify-content-start ">
+<div class = "col-sm-8 col-12 col-md-4  p-4 rounded bg-blue rounded shadow-lg ">
+<h1 class="animate__animated animate__fadeInRight text-white text-center">Log in</h1>
+<%= bootstrap_form_for(@user, inline_errors: true, url: "#",html: {class: "text-white lead p-3 "}) do |f| %>
+<i class="fa fa-user-circle-o text-success" aria-hidden="true"></i>
+ <%= f.text_field :name,label: "Enter your username", class: "w-75"  %>
+<%= f.submit "Log in" , class: " btn btn-success p-2 w-50 "%>
+<%end%>
+<div class="container d-flex justify-content-center">
+<%= link_to "Dont have an account?" , "#", class: "lead text-white"%>
+</div>
+</div>
+</div>
+</div>

@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem "bootstrap_form", "~> 4.0"
 
 gem 'gravatar_image_tag'
 
