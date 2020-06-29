@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light border-bottom border-white">
+  <%= render 'shared/image',size:50 %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%=  link_to "You are logged in as :#{current_user.name}", root_path, class: "nav_link text-white ml-4 lead " %>
+      </li>
+      
+    </ul>
+   <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-success px-3" %>
+  </div>
+</nav>

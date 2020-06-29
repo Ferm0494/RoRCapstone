@@ -7,8 +7,41 @@
 
   <body>
     <%= yield %>
+
+    <script>
+function validateFile(obj,res){
+    console.log("A file was choosen!")
+		var reader = new FileReader();
+		reader.readAsDataURL(obj.files[0]);
+		reader.onload = function (e) {
+		var image=new Image();
+		image.src=e.target.result;
+		image.onload = function () {
+      var avatar = document.getElementsByTagName("img")
+      avatar = avatar[avatar.length - 1]
+      avatar.src=image.src;
+      avatar.classList.add("d-block")
+      
+		};
+        }
+    if (res){
+        var submit = document.getElementById("submit")
+        var label = document.getElementsByTagName("label")[0]
+        label.classList.add("animate__animated","animate__backOutLeft")
+        label.addEventListener('animationend',()=>{
+         label.classList.add("d-none")
+         submit.className = "d-block mx-auto  btn btn-success animate__animated animate__backInRight "
+            
+        })  
+    }
+
+        
+}
+</script>
   
   </body>
+
+
 
   
 </html>

@@ -1,0 +1,6 @@
+
+<nav class="nav justify-content-between">
+ <%= link_to 'Most recents', languages_index_path , class: "nav-link btn btn-outline-success px-4 #{  'active' if params[:action].eql? "index"  } " %>
+ <%= link_to "Most Poblated", languages_index_poblated_path  , class: "nav-link btn btn-outline-success px-4 #{  'active' if params[:action].eql? "poblated"  }  " %>
+ <%= link_to 'Most hours',languages_index_top_path  , class: "nav-link btn btn-outline-success px-4 #{  'active' if params[:action].eql? "top"   } " %>
+</nav>

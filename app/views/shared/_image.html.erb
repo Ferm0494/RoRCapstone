@@ -1,0 +1,5 @@
+<% if  profile_img? %>
+    <%= image_tag( current_user.avatar, class: "rounded-circle  animate__animated animate__fadeIn animate__slow",size: size) %>
+<% else %>
+<%= image_tag("unknown_user.jpeg",class: "rounded-circle animate__animated animate__fadeIn ", size: size) %>
+<%end%>

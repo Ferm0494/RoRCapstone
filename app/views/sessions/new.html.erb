@@ -2,14 +2,14 @@
 <div class="h-100 d-flex justify-content-center align-items-center  ">
 <div class="container-fluid   d-flex justify-content-md-center justify-content-start ">
 <div class = "col-sm-8 col-12 col-md-4  p-4 rounded bg-blue rounded shadow-lg ">
-<h1 class="animate__animated animate__fadeInRight text-white text-center">Log in</h1>
-<%= bootstrap_form_for(@user, inline_errors: true, url: "#",html: {class: "text-white lead p-3 "}) do |f| %>
+<h1 class="text-white animate__animated animate__fadeInDown text-center">Log in</h1>
+<%= bootstrap_form_for(@user, inline_errors: true, url: login_path,html: {class: "text-white lead p-3 "}) do |f| %>
 <i class="fa fa-user-circle-o text-success position-absolute px-2 py-1" aria-hidden="true"></i>
  <%= f.text_field :name,label: "Username", class: "w-75 px-5"  %>
 <%= f.submit "Log in" , class: " btn btn-success p-2 w-50 "%>
 <%end%>
 <div class="container d-flex justify-content-center">
-<%= link_to "Dont have an account?" , "#", class: "lead text-white"%>
+<%= link_to "Dont have an account?" , signup_path, class: "lead text-white"%>
 </div>
 </div>
 </div>
