@@ -13,10 +13,11 @@ class UsersController < ApplicationController
   def show; end
 
   def update
-   current_user.update(sanitize_user)
-   render :show
+    current_user.update(sanitize_user)
+    render :show
   end
-  private 
+
+  private
 
   def sanitize_user
     params.require(:user).permit(:avatar)

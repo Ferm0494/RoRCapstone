@@ -1,25 +1,22 @@
 class LanguagesController < ApplicationController
   def index
-    @languages = Language.includes(current_user).all
+    @languages = Language.all.where(user: current_user).order(created_at: :desc)
   end
 
   def new
     @language = Language.new
   end
 
-  def show
-  end
+  def show; end
 
-  def top
-  end
+  def top; end
 
-  def poblated 
-  end
+  def poblated; end
 
   def create
-    
     @language = Language.new(sanitize_params_lang)
-    @language.total_hours, @language.total_frameworks = 0,0
+    @language.total_hours = 0
+    @language.total_frameworks = 0
     @language.user = current_user
     # debugger;
     if @language.save
@@ -28,7 +25,9 @@ class LanguagesController < ApplicationController
       render :new
     end
   end
-private
+
+  private
+
   def sanitize_params_lang
     params.require(:language).permit(:name, :icon)
   end

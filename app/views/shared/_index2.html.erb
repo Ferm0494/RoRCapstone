@@ -1,11 +1,18 @@
+
 <%= render 'shared/nav' %>
-<div class="jumbotron bg-transparent">
-    <h1 class="display-3 text-white">Frameworks/Libraries</h1>
-    <p class="lead text-white">Include as many Frameworks/Libs you want!</p>
-    <hr class="my-2 border-white ">
+<div class="jumbotron bg-transparent pt-2">
+<div class= "d-flex my-4 py-4 ">
+    <%= image_tag(language.icon, class: "rounded-circle align-self-center", size: 100)  %>
+    <div class="d-flex ml-3 flex-column">
+    <h1 class="display-3 text-white animate__animated animate__bounceInDown"> <%= language.name  %> Programming </h1>
+    <p class="text-white"><strong>Total Frameworks: <%= frameworks.count  %>  </strong></p>
+    <p class="text-white"><strong>Total Hours: <%= frameworks.sum(:total_hours) %> </strong></p>
+    </div>
+    </div>
     <p class="lead">
-        <%= link_to "Add a new Framework" , "#" ,class: "btn btn-success" %>
+        <%= link_to "Add a new Frame/Lib" , framework_new_path(language.id)  ,class: "btn btn-success" %>
     </p>
+     <hr class="my-2 border-white ">
 </div>
 
 <div class="container bg-transparent ">
@@ -13,7 +20,7 @@
 
     <% frameworks.with_attached_icon.each do |lang| %>
 
-    <%= link_to(show_specific_lang_path(lang)) do %>
+    <%= link_to(index_frameworks_path(lang)) do %>
     <div class=" col-12 bg-light d-flex rounded  my-4 mx-auto " >
     <%= image_tag(lang.icon, class: "rounded-circle align-self-center", size: 50 ) %>
       <div class="d-flex flex-column ml-4 mt-3 w-50">
@@ -35,3 +42,4 @@
 <%end %>
     
 </div>
+
