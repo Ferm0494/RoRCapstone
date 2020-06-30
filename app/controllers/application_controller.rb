@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    User.find(session[:id])
+    return User.find(session[:id]) unless session[:id].nil?
   end
 
   def authenticate
