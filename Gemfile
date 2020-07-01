@@ -30,6 +30,8 @@ gem 'gravatar_image_tag'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +49,8 @@ group :development do
 end
 
 group :test do
+ # To include Should in RSPEC
+  gem 'shoulda-matchers', '~> 4.0'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
