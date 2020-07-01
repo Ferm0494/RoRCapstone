@@ -1,6 +1,7 @@
 class FrameworksController < ApplicationController
-  before_action :defining_lang, except: %i[index2 top2]
   before_action :authenticate
+  before_action :defining_lang, except: %i[index2 top2]
+  
 
   def index
     @frameworks = Framework.where(user_id: current_user, language_id: @language).order(updated_at: :desc)

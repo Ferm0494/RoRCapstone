@@ -1,7 +1,7 @@
 class LanguagesController < ApplicationController
   before_action :authenticate
   def index
-    @languages = Language.with_attached_icon.user_langs(current_user).where("name != 'others'")
+    @languages = Language.with_attached_icon.user_langs(current_user).where("name != 'others'").order(created_at: :desc)
   end
 
   def new
