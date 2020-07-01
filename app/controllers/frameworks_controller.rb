@@ -1,7 +1,6 @@
 class FrameworksController < ApplicationController
   before_action :authenticate
   before_action :defining_lang, except: %i[index2 top2]
-  
 
   def index
     @frameworks = Framework.where(user_id: current_user, language_id: @language).order(updated_at: :desc)
@@ -22,7 +21,6 @@ class FrameworksController < ApplicationController
   def new
     @framework = Framework.new
   end
-
 
   def edit
     @framework = Framework.where(user_id: current_user, language_id: @language, id: params[:id2]).first
@@ -55,22 +53,24 @@ class FrameworksController < ApplicationController
   private
 
   def defining_lang
-    if !params[:id].eql? "other"
-    @language = Language.where(user_id: current_user, id: params[:id]).first
-    redirect_to languages_index_path if @language.nil?
+    if !params[:id].eql? 'other'
+      @language = Language.where(user_id: current_user, id: params[:id]).first
+      redirect_to languages_index_path if @language.nil?
     else
       @language = Language.user_langs(current_user).find_by(name: 'others')
       if @language.nil?
-          create_new_others_register
-          @language = Language.user_langs(current_user).find_by(name: 'others')
+        create_new_others_register
+        @language = Language.user_langs(current_user).find_by(name: 'others')
       end
-     
+
     end
   end
 
   def create_new_others_register
     @language = current_user.languages.build(name: 'others')
-    @language.icon.attach(io: File.open(Rails.root.join("app","assets","images","other.png")), filename: "other.png", content_type: "image/png")
+    @language.icon.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'other.png')),
+                          filename: 'other.png',
+                          content_type: 'image/png')
     @language.save
   end
 
