@@ -11,7 +11,7 @@
 
 <div class="container bg-transparent ">
     <%= render 'shared/sub_nav' %>
-    <% languages.with_attached_icon.each do |lang| %>
+    <% languages.each do |lang| %>
     <%= link_to(index_frameworks_path(lang)) do %>
     <div class=" col-12 bg-light d-flex rounded  my-4 mx-auto " >
     <%= image_tag(lang.icon, class: "rounded-circle align-self-center", size: 50 ) %>
@@ -27,10 +27,6 @@
         </div>
     </div>
   <%end%>
-    
-    
-
-
 <%end %>
     
 </div>

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'languages/:id/frameworks/new' => 'frameworks#new', as: 'framework_new'
   post 'languages/:id/frameworks/new' => 'frameworks#create', as:'frameworks'
   get 'languages/:id/frameworks/:id2/edit'=> 'frameworks#edit', as: 'edit_framework'
+  get 'frameworks' => 'frameworks#index2', as:'all_frameworks'
+  get 'frameworks/top' => 'frameworks#top2', as: "top_overall"
+  # get 'frameworks/other/new', => 'frameworks#others'as: "other_new_framework"
   patch 'languages/:id/frameworks/:id2' => 'frameworks#update', as: 'update_framework'
   
   get 'languages/index' => 'languages#index'
