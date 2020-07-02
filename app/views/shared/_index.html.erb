@@ -2,7 +2,7 @@
 <%= render 'shared/nav' %>
 <div class="jumbotron bg-transparent">
     <h1 class="display-3 text-white">Languages</h1>
-    <p class="lead text-white">Total Languages: <strong> <%= current_user.languages.count %> <strong></p>
+    <h5 class=" text-white my-3 mb-4" >Total Languages:  <%= current_user.languages.where.not(name: "others").count %> </h5>
     <hr class="my-2 border-white ">
     <p class="lead">
         <%= link_to "Add a new Language" , languages_new_path ,class: "btn btn-success" %>
@@ -18,7 +18,7 @@
       <div class="d-flex flex-column ml-4 mt-3 w-50">
         <h4 class="text-warning"> <%= lang.name %></h4>
         <div class="d-flex">
-        <p class=" text-muted">Hours spent : <strong class="text-center"> <%= lang.frameworks.sum(:total_hours) %>  </strong> </p>
+        <p class=" text-muted">Hours spent  : <strong class="text-center"> <%= lang.frameworks.sum(:total_hours) %>  </strong> </p>
         <p class=" text-muted ml-2">Total Frame/Libs :<strong class="text-center"> <%= lang.frameworks.count %> </strong> </p>
         </div>
       </div>
