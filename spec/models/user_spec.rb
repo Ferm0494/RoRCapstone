@@ -29,7 +29,9 @@ RSpec.describe User, type: :model do
   context 'Avatar for User' do
     let(:user) { User.new(name: 'Testing1') }
     it 'Should have a valid image' do
-      user.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'unknown_user.jpeg')), filename: 'unknown_user.jpeg', content_type: 'image/jpeg')
+      user.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'unknown_user.jpeg')),
+                         filename: 'unknown_user.jpeg',
+                         content_type: 'image/jpeg')
       expect(user.avatar).to be_attached
     end
   end
