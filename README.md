@@ -1,6 +1,6 @@
 # Tracker Languages progress APP
 
-> Social media stay in touch
+> An app to track your progress on languages/frameworks
 ![screenshot](./app/assets/images/1.png)
 ![screenshot](./app/assets/images/2.png)
 ![screenshot](./app/assets/images/3.png)
