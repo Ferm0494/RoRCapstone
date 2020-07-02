@@ -91,6 +91,8 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -238,6 +240,7 @@ DEPENDENCIES
   database_cleaner
   gravatar_image_tag
   jbuilder (~> 2.7)
+  launchy (~> 2.4, >= 2.4.3)
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.11)

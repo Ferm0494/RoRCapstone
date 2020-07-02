@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'database_cleaner'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
   gem 'rspec-rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'

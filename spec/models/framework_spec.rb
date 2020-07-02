@@ -41,21 +41,23 @@ RSpec.describe Framework, type: :model do
     end
 
     it 'Should be invalid if it doesnt have an icon' do
-        framework.user = user
-        framework.language = language
-        expect(framework).not_to be_valid
+      framework.user = user
+      framework.language = language
+      expect(framework).not_to be_valid
     end
   end
 
   context 'Assocs for framework' do
-      it {should belong_to(:user)}
-      it {should belong_to(:language)}
+    it { should belong_to(:user) }
+    it { should belong_to(:language) }
   end
 
   context 'Should have an icon' do
     let(:framework) { Framework.new(name: 'Testing1') }
     it 'Should have a valid image' do
-      framework.icon.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'unknown_user.jpeg')), filename: 'unknown_user.jpeg', content_type: 'image/jpeg')
+      framework.icon.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'unknown_user.jpeg')),
+                            filename: 'unknown_user.jpeg',
+                            content_type: 'image/jpeg')
       expect(framework.icon).to be_attached
     end
   end
