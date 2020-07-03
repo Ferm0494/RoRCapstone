@@ -3,19 +3,19 @@ class FrameworksController < ApplicationController
   before_action :defining_lang, except: %i[index2 top2]
 
   def index
-    @frameworks = Framework.where(user_id: current_user, language_id: @language).order(updated_at: :desc)
+    @frameworks = Framework.user_language(current_user, @language).order_updated_desc
   end
 
   def index2
-    @frameworks = current_user.frameworks.order(updated_at: :desc).includes([:language])
+    @frameworks = current_user.frameworks.order_updated_desc.includes([:language])
   end
 
   def top2
-    @frameworks = Framework.where(user_id: current_user).includes([:language]).order(total_hours: :desc)
+    @frameworks = Framework.user_frameworks(current_user).includes([:language]).order_total_hours_desc
   end
 
   def top
-    @frameworks = Framework.where(user_id: current_user, language_id: @language).order(total_hours: :desc)
+    @frameworks = Framework.user_language(current_user, @language).order_total_hours_desc
   end
 
   def new
@@ -23,7 +23,7 @@ class FrameworksController < ApplicationController
   end
 
   def edit
-    @framework = Framework.where(user_id: current_user, language_id: @language, id: params[:id2]).first
+    @framework = Framework.find_by(user_id: current_user, language_id: @language, id: params[:id2])
 
     redirect_to languages_index_path if @framework.nil?
   end

@@ -6,5 +6,7 @@ class Language < ApplicationRecord
   validates :icon, presence: true
   belongs_to :user
   scope :user_langs, ->(user) { where('user_id = :user_id', user_id: user.id) }
+  scope :where_not_others_ordered, -> { where("name != 'others'").order(name: :asc) }
+  scope :where_not_others, -> { where("name != 'others'") }
   #   scope :order_by_hours, -> (languages)
 end

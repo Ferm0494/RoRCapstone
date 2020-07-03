@@ -5,15 +5,15 @@
 > A user can add frameworks to ANY language and update the hours of progress.
 > All Languages/Framworks tracks progress based on hours/total_languages/total_frameworks for that user
 
-![screenshot](./app/assets/images/1.png)
-![screenshot](./app/assets/images/2.png)
-![screenshot](./app/assets/images/3.png)
-![screenshot](./app/assets/images/4.png)
-![screenshot](./app/assets/images/5.png)
-![screenshot](./app/assets/images/6.png)
-![screenshot](./app/assets/images/7.png)
-![screenshot](./app/assets/images/8.png)
-![screenshot](./app/assets/images/9.png)
+![screenshot](./docs/1.png)
+![screenshot](./docs/2.png)
+![screenshot](./docs/3.png)
+![screenshot](./docs/4.png)
+![screenshot](./docs/5.png)
+![screenshot](./docs/6.png)
+![screenshot](./docs/7.png)
+![screenshot](./docs/8.png)
+![screenshot](./docs/9.png)
 
 
 ## Built With

@@ -1,7 +1,7 @@
 class LanguagesController < ApplicationController
   before_action :authenticate
   def index
-    @languages = Language.with_attached_icon.user_langs(current_user).where("name != 'others'").order(name: :asc)
+    @languages = Language.with_attached_icon.user_langs(current_user).where_not_others_ordered
   end
 
   def new
@@ -9,12 +9,12 @@ class LanguagesController < ApplicationController
   end
 
   def top
-    @languages = Language.with_attached_icon.user_langs(current_user).where("name != 'others'")
+    @languages = Language.with_attached_icon.user_langs(current_user).where_not_others
     @languages = @languages.sort_by { |a| a.frameworks.sum(:total_hours) }.reverse
   end
 
   def poblated
-    @languages = Language.with_attached_icon.where(user: current_user).where("name != 'others'")
+    @languages = Language.with_attached_icon.where(user: current_user).where_not_others
     @languages = @languages.sort_by { |a| a.frameworks.count }.reverse
   end
 
