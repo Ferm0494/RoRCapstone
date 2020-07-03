@@ -4,26 +4,16 @@
 > where user can create a programming language and add frameworks to it!
 > also a user can add frameworks to ANY language and update the hours of progress.
 > All of the  Languages/Framworks tracks progress based on hours/total_languages/total_frameworks for that user
- 
 
 ![screenshot](./docs/1.png)
-
 ![screenshot](./docs/2.png)
-
 ![screenshot](./docs/3.png)
-> A user can create many programming languages !
 ![screenshot](./docs/4.png)
-> A user can add frameworks to ANY language and update the hours of progress.
 ![screenshot](./docs/5.png)
-> All Languages/Framworks tracks progress based on hours/total_languages/total_frameworks for that user
 ![screenshot](./docs/6.png)
-> A user can add frameworks to ANY language and update the hours of progress.
 ![screenshot](./docs/7.png)
-
 ![screenshot](./docs/8.png)
-
 ![screenshot](./docs/9.png)
-
 
 ## Built With
 
