@@ -1,6 +1,10 @@
 # Tracker Languages progress APP
 
-> An app to track your progress on languages/frameworks
+> An app where a user can track progress of studies based on languages/frameworks
+> A user can create a programming language and add frameworks to it!
+> A user can add frameworks to ANY language and update the hours of progress.
+> All Languages/Framworks tracks progress based on hours/total_languages/total_frameworks for that user
+
 ![screenshot](./app/assets/images/1.png)
 ![screenshot](./app/assets/images/2.png)
 ![screenshot](./app/assets/images/3.png)
