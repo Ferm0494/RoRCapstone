@@ -2,7 +2,7 @@
 <%= render 'shared/nav' %>
 <div class="jumbotron bg-transparent">
     <h1 class="display-3 text-white">Languages</h1>
-    <h5 class=" text-white my-3 mb-4" >Total Languages:  <%= current_user.languages.where.not(name: "others").count %> </h5>
+    <h5 class=" text-white my-3 mb-4" >Total Languages:  <%= current_user.languages.where_not_others_ordered.count %> </h5>
     <hr class="my-2 border-white ">
     <p class="lead">
         <%= link_to "Add a new Language" , languages_new_path ,class: "btn btn-success" %>
