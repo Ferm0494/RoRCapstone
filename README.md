@@ -4,8 +4,7 @@
 > where user can create a programming language and add frameworks to it!
 > also a user can add frameworks to ANY language and update the hours of progress.
 > all the  Languages/Framworks tracks progress based on hours/total_languages/total_frameworks for that user
-
-> An app where a user can track progress of studies based on languages/frameworks 
+ 
 
 ![screenshot](./docs/1.png)
 
