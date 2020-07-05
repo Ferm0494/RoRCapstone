@@ -24,7 +24,8 @@ module ApplicationHelper
   def active(action, comparer)
     return 'active' if comparer.eql?(action)
   end
-  #rubocop: disable  Metrics/CyclomaticComplexity
+  # rubocop: disable  Metrics/CyclomaticComplexity
+
   def lang(language, res = false, action = nil)
     if language.nil? && !res
       return [profile_img(100),
@@ -51,7 +52,8 @@ module ApplicationHelper
      link_to('Most hours', top_overall_path,
              class: "nav-link btn btn-outline-success px-4 #{active(action, 'top2')}")]
   end
-  #rubocop: enable  Metrics/CyclomaticComplexity
+  
+  # rubocop: enable  Metrics/CyclomaticComplexity
 
   def language_get_params(language, lang)
     language.nil? ? lang.language : language
