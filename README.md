@@ -5,6 +5,8 @@
 > also a user can add frameworks to ANY language and update the hours of progress.
 > All of the  Languages/Framworks tracks progress based on hours/total_languages/total_frameworks for that user
 
+> Design given by: [@Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
 ![screenshot](./docs/1.png)
 ![screenshot](./docs/2.png)
 ![screenshot](./docs/3.png)
