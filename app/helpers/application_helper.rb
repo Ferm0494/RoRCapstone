@@ -26,6 +26,7 @@ module ApplicationHelper
   end
 
   # rubocop: disable  Metrics/PerceivedComplexity
+
   def lang(language, res = false, action = nil)
     if language.nil? && !res
       [profile_img(100),
