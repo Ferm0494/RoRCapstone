@@ -1,5 +1,5 @@
 
-<nav class="nav justify-content-between">
+<nav class="nav justify-content-between  flex-column flex-md-row ">
  <%= link_to 'Order', languages_index_path , class: "nav-link btn btn-outline-success px-4 #{ active(params[:action],"index") } " %>
  <%= link_to "Most Poblated", languages_index_poblated_path  , class: "nav-link btn btn-outline-success px-4 #{  active(params[:action],"poblated") }  " %>
  <%= link_to 'Most hours',languages_index_top_path  , class: "nav-link btn btn-outline-success px-4 #{  active(params[:action],"top")  } " %>

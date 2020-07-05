@@ -5,12 +5,12 @@
 <div class= "d-flex my-4 py-4 ">
     <%= results[0]  %>
     <div class="d-flex ml-3 flex-column">
-    <h1 class="display-3 text-white animate__animated animate__bounceInDown"> <%=  get_title(language)  %> </h1>
+    <h4 class="text-white animate__animated animate__bounceInDown"> <%=  get_title(language)  %> </h4>
     <p class="text-white"><strong>Total Frameworks: <%= frameworks.count  %>  </strong></p>
     <p class="text-white"><strong>Total Hours: <%= frameworks.sum(:total_hours) %> </strong></p>
     </div>
     </div>
-    <p class="lead">
+    <p class="lead d-none d-md-block">
     <%= results[1] %>
     </p>
      <hr class="my-2 border-white ">
@@ -22,23 +22,25 @@
 
     <%= link_to(edit_framework_path(language_get_params(language,lang),lang)) do %>
     <div class=" col-12 bg-light d-flex rounded  my-4 mx-auto " >
-    <%= image_tag(lang.icon, class: "rounded-circle align-self-center", size: 50 ) %>
-      <div class="d-flex flex-column ml-4 mt-3 w-50">
+    <%= image_tag(lang.icon, class: "rounded-circle mt-3 align-self-center align-self-md-start", size: 50 ) %>
+      <div class="d-flex flex-column ml-4 mt-3 w-100 ">
         <h4 class="text-warning"> <%= lang.name %></h4>
         <div class="d-flex">
         <p class=" text-muted">Hours spent : <strong class="text-center"> <%= lang.total_hours %>  </strong> </p>
         </div>
-      </div>
-      <div class="w-50 d-flex justify-content-end ">
+         <div class="w-100 d-flex justify-content-end d-flex ">
         <p class="text-muted align-self-end">  <%= lang.created_at %></p>
         </div>
+      </div>
+     
     </div>
   <%end%>
-    
-    
-
 
 <%end %>
+<p class="lead d-flex d-md-none w-100 text-center flex-column mt-2">
+        <%= results[1]%>
+</p>
+
     
 </div>
 

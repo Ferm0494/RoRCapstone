@@ -1,14 +1,14 @@
 
 <%= render 'shared/nav' %>
-<div class="container bg-blue shadow-lg rounded p-4 mt-3 ">
+<div class="container bg-blue shadow-lg rounded p-4 mt-3 width-nav ">
 <div class="row">
-<div class="col-12 d-flex  ">
-<%= image_tag(@framework.icon , class: "rounded-circle animate__animated animate__bounceInDown align-self-center", size: 100) %>
+<div class="col-12 d-flex flex-column flex-md-row ">
+<%= image_tag(@framework.icon , class: "rounded-circle animate__animated animate__bounceInDown align-self-center img-width  ", size: 100) %>
 <div class="d-flex flex-column ml-3">
 <h2 class="align-self-center text-white">Framework : <%=  @framework.name%> </h2>
 <%= bootstrap_form_for(@framework, inline_errors: true, url: update_framework_path(@language.id,@framework.id),method: :patch, html:{ class:"text-white"}) do |f| %>
         <%=f.number_field :total_hours, label: "Hours practiced:", min: 0, value: 0 %>
-        <%= f.submit "Confirm", class:"btn btn-success" %>
+        <%= f.submit "Confirm", class:"btn btn-success full-width" %>
     <%end%>
     </div>
 </div>

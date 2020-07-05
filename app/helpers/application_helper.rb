@@ -2,7 +2,7 @@ module ApplicationHelper
   def profile_img(size)
     if current_user.avatar.attached?
       return image_tag(current_user.avatar,
-                       class: 'rounded-circle  animate__animated animate__fadeIn animate__slow',
+                       class: 'rounded-circle  animate__animated animate__fadeIn animate__slow ',
                        size: size)
     end
 
@@ -31,12 +31,12 @@ module ApplicationHelper
     if language.nil? && !res
       [profile_img(100),
        link_to('Create a new Framework',
-               framework_new_path('other'), class: 'btn btn-success')]
+               framework_new_path('other'), class: 'btn btn-success p-3')]
     elsif !language.nil? && !res
       [image_tag(language.icon,
                  class: 'rounded-circle align-self-center', size: 100),
        link_to('Add a new Frame/Lib',
-               framework_new_path(language), class: 'btn btn-success')]
+               framework_new_path(language), class: 'btn btn-success p-3')]
 
     elsif !language.nil? && res
 

@@ -12,3 +12,33 @@
 .invalid-feedback {
   font-weight: bold;
 }
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .container {
+    .row {
+      a {
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .img-width {
+    width: 75px;
+    height: 75px;
+  }
+
+  .width-nav {
+    width: 50%;
+  }
+}

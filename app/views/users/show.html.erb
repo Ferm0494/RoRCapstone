@@ -2,7 +2,7 @@
 <div class="container rounded">
 <div class="row d-flex align-items-center flex-column  ">
 
-<%= render 'shared/image', size:200  %>
+<%= render 'shared/image', size:200,id: "lol"  %>
 <%= form_with(model: current_user,url: update_user_path, local: true) do |f| %>
 <div class="my-4 d-flex justify-content-center align-items-center">
 <label for="user_avatar" class="btn btn-success mb-0" >Upload a new image</label>
