@@ -1,13 +1,7 @@
 
 
 <nav class="nav justify-content-between">
-<%if !language.nil? %>
- <%= link_to 'Most recents', index_frameworks_path(language) , class: "nav-link btn btn-outline-success px-4 #{  'active' if params[:action].eql? "index"  } " %>
- <%= link_to 'Most hours', top_frameworks_path(language)   , class: "nav-link btn btn-outline-success px-4 #{  'active' if params[:action].eql? "top"   } " %>
- <%else%>
-  <%= link_to 'Most recents', all_frameworks_path , class: "nav-link btn btn-outline-success px-4 #{  'active' if params[:action].eql? "index2"  } " %>
- <%= link_to 'Most hours', top_overall_path  , class: "nav-link btn btn-outline-success px-4 #{  'active' if params[:action].eql? "top2"   } " %>
- <%end%>
-
-
+<% results =lang(language,true,params[:action]) %>
+ <%= results[0]%>
+ <%= results[1]%>
 </nav>

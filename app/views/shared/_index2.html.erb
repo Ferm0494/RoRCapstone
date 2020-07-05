@@ -1,20 +1,17 @@
 
 <%= render 'shared/nav' %>
+<%results = lang(language)%>
 <div class="jumbotron bg-transparent pt-2">
 <div class= "d-flex my-4 py-4 ">
-    <%= !lang?(language) ? image_tag(language.icon, class: "rounded-circle align-self-center", size: 100) :  image_tag( profile_img? ?  current_user.avatar : "unknown_user.jpeg" , class: "rounded-circle align-self-center", size: 100) %>
+    <%= results[0]  %>
     <div class="d-flex ml-3 flex-column">
-    <h1 class="display-3 text-white animate__animated animate__bounceInDown"> <%=   !language.nil? ? "#{language.name} Programming"  : "Frameworks"  %> </h1>
+    <h1 class="display-3 text-white animate__animated animate__bounceInDown"> <%=  get_title(language)  %> </h1>
     <p class="text-white"><strong>Total Frameworks: <%= frameworks.count  %>  </strong></p>
     <p class="text-white"><strong>Total Hours: <%= frameworks.sum(:total_hours) %> </strong></p>
     </div>
     </div>
     <p class="lead">
-    <% if lang?(language) %>
-       <%=  link_to "Create a new Framework", framework_new_path("other")   , class: "btn btn-success" %> 
-       <%else%>
-        <%= link_to "Add a new Frame/Lib", framework_new_path(language), class: "btn btn-success"  %>
-    <% end  %>
+    <%= results[1] %>
     </p>
      <hr class="my-2 border-white ">
 </div>
@@ -23,7 +20,7 @@
     <%= render 'shared/sub_nav2', language: language %>
     <% frameworks.with_attached_icon.each do |lang| %>
 
-    <%= link_to(edit_framework_path(lang?(language) ? lang.language : language,lang)) do %>
+    <%= link_to(edit_framework_path(language_get_params(language,lang),lang)) do %>
     <div class=" col-12 bg-light d-flex rounded  my-4 mx-auto " >
     <%= image_tag(lang.icon, class: "rounded-circle align-self-center", size: 50 ) %>
       <div class="d-flex flex-column ml-4 mt-3 w-50">
