@@ -6,10 +6,17 @@
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "4.2.2",
+    "animate.css": "^4.1.0",
+    "bootstrap": "4.3.1",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.17.2",
     "webpack-dev-server": "^3.11.0"
   }
 }

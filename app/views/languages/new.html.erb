@@ -1,0 +1,20 @@
+
+<%= render 'shared/nav' %>
+<div class="h-75 d-flex justify-content-center align-items-center  ">
+<div class="container-fluid   d-flex justify-content-md-center justify-content-start ">
+<div class = "col-sm-8 col-12 col-md-4  p-4 rounded bg-blue rounded shadow-lg ">
+<h2 class="text-white animate__animated animate__fadeInDown text-center"> New Language</h2>
+<%= bootstrap_form_for(@language, inline_errors: true, url: languages_new_path  ,html: {class: "text-white lead p-3 "}) do |f| %>
+
+ <%= f.text_field :name, class: "w-100"  %>
+ <%= f.file_field  :icon, onchange:"validateFile(this,false)" %>
+ <%= image_tag("", class: "d-none rounded mb-3",size: 50) %>
+ 
+<%= f.submit "Create new language" , class: " btn btn-success full-width"%>
+<%end%>
+<div class="container d-flex justify-content-center w-100">
+<%= link_to "Go back" , :back, class: "lead text-white"%>
+</div>
+</div>
+</div>
+</div>

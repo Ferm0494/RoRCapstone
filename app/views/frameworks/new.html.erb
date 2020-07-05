@@ -1,0 +1,23 @@
+
+<%= render 'shared/nav' %>
+<div class="h-75  d-flex  justify-content-center align-items-md-center align-items-start  ">
+<div class="container-fluid   d-flex justify-content-md-center justify-content-start ">
+<div class = "col-sm-8 col-12 col-md-4  p-4 rounded bg-blue rounded shadow-lg mt-3">
+<div class="d-flex ">
+<%= image_tag(@language.icon , class: "rounded-circle img-width ", size: 75) %>
+<h2 class="text-white animate__animated animate__fadeInDown align-self-center ml-3 "> <%= @language.name %> New Framework</h2>
+</div>
+<%= bootstrap_form_for(@framework, inline_errors: true, url: frameworks_path(@language)  ,html: {class: "text-white lead p-3 "}) do |f| %>
+
+ <%= f.text_field :name, class: "w-100"  %>
+ <%= f.file_field  :icon, onchange:"validateFile(this,false)" %>
+ <%= image_tag("", class: "d-none rounded mb-3",size: 50) %>
+ 
+<%= f.submit "Create new framework" , class: " btn btn-success full-width"%>
+<%end%>
+<div class="container d-flex justify-content-center">
+<%= link_to "Go back" , :back, class: "lead text-white"%>
+</div>
+</div>
+</div>
+</div>

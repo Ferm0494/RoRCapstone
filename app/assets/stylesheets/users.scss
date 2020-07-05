@@ -1,0 +1,44 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#user_avatar {
+  display: none;
+}
+
+.bg-blue {
+  background-color: #326fb0 !important;
+}
+
+.invalid-feedback {
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .container {
+    .row {
+      a {
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .img-width {
+    width: 75px;
+    height: 75px;
+  }
+
+  .width-nav {
+    width: 50%;
+  }
+}

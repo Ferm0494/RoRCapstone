@@ -1,0 +1,38 @@
+<div class="h-100 d-flex justify-content-center align-items-center ">
+<div class="container rounded">
+<div class="row d-flex align-items-center flex-column  ">
+
+<%= render 'shared/image', size:200,id: "lol"  %>
+<%= form_with(model: current_user,url: update_user_path, local: true) do |f| %>
+<div class="my-4 d-flex justify-content-center align-items-center">
+<label for="user_avatar" class="btn btn-success mb-0" >Upload a new image</label>
+    <%= f.file_field :avatar, onchange: "validateFile(this,true)"  %>
+    <%= f.submit "Save photo", class: "d-none" ,id: "submit" %>
+    
+    </div>
+<%end%>
+<h4 class="text-white animate__animated animate__fadeIn animate__delay-2s">Welcome <%= current_user.name %></h4>
+<ul class="list-group list-group-flush">
+<li class="list-group-item bg-transparent border-0 d-flex p-4">
+<i class="fa fa-tasks fa-lg text-white align-self-center" aria-hidden="true"></i>
+<%= link_to "All my Frameworks/Libraries", all_frameworks_path, class: " text-white bg-transparent  lead ml-2 "%>
+</li>
+<li class="list-group-item bg-transparent border-white  d-flex p-4 ">
+<i class="fa fa-external-link-square fa-lg text-white align-self-center" aria-hidden="true"></i>
+<%= link_to "All my External Frameworks/Libraries",index_frameworks_path(:other) , class: "  text-white bg-transparent  lead ml-2"%>
+</li>
+<li class="list-group-item bg-transparent border-white d-flex p-4">
+<i class="fa fa-globe fa-lg text-white align-self-center" aria-hidden="true"></i>
+<%= link_to "All Languages",languages_index_path , class: " text-white  lead  border-white bg-transparent ml-2 "%>
+</li>
+
+<li class="list-group-item bg-transparent border-white d-flex p-4">
+<i class="fa fa-sign-out fa-lg text-white align-self-center" aria-hidden="true"></i>
+<%= link_to "Log out",logout_path,method: :delete, class: " text-white  lead  border-white bg-transparent ml-2"%>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+

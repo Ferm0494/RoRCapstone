@@ -1,0 +1,36 @@
+
+<%= render 'shared/nav' %>
+<div class="jumbotron bg-transparent">
+    <h1 class="text-white">Languages</h1>
+    <h6 class=" text-white my-3 mb-4" >Total Languages:  <%= num_languages(current_user) %> </h6>
+    <hr class="my-2 border-white ">
+    <p class="lead d-none d-md-block">
+        <%= link_to "Add a new Language" , languages_new_path ,class: "btn btn-success p-3" %>
+    </p>
+</div>
+
+<div class="container bg-transparent ">
+    <%= render 'shared/sub_nav' %>
+    <% languages.each do |lang| %>
+    <%= link_to(index_frameworks_path(lang)) do %>
+    <div class=" col-12 bg-light d-flex rounded my-4 mx-auto " >
+    <%= image_tag(lang.icon, class: "rounded-circle mt-3", size: 60 ) %>
+      <div class="d-flex flex-column  ml-4 mt-3 w-100 ">
+        <h4 class="text-warning"> <%= lang.name %></h4>
+        <div class="d-flex flex-column flex-md-row ">
+        <p class=" text-muted mb-0">Hours spent  : <strong class="text-center"> <%= language_sum_hours_frameworks(lang) %>  </strong> </p>
+        <p class=" text-muted ml-0 ml-md-2 mb-0 ">Total Frame/Libs :<strong class="text-center"> <%= lang_frameworks_count(lang) %> </strong> </p>
+        </div>
+         <div class="w-100 d-flex justify-content-end ">
+        <p class="text-muted align-self-end">  <%= lang.created_at %></p>
+        </div>
+      </div>
+    </div>
+  <%end%>
+<%end %>
+ <p class="lead d-block d-md-none w-100 text-center mt-2">
+        <%= link_to "Add a new Language" , languages_new_path ,class: "btn btn-success w-100 p-3" %>
+    </p>
+    
+</div>
+
