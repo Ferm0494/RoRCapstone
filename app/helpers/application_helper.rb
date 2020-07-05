@@ -52,7 +52,6 @@ module ApplicationHelper
      link_to('Most hours', top_overall_path,
              class: "nav-link btn btn-outline-success px-4 #{active(action, 'top2')}")]
   end
-  
   # rubocop: enable  Metrics/CyclomaticComplexity
 
   def language_get_params(language, lang)
