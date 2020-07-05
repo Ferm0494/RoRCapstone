@@ -25,34 +25,32 @@ module ApplicationHelper
     return 'active' if comparer.eql?(action)
   end
 
-  # rubocop:disable Metrics/PerceivedComplexity
   def lang(language, res = false, action = nil)
     if language.nil? && !res
-      [profile_img(100),
-       link_to('Create a new Framework',
-               framework_new_path('other'), class: 'btn btn-success p-3')]
-    elsif !language.nil? && !res
-      [image_tag(language.icon,
-                 class: 'rounded-circle align-self-center', size: 100),
-       link_to('Add a new Frame/Lib',
-               framework_new_path(language), class: 'btn btn-success p-3')]
-
-    elsif !language.nil? && res
-
-      [link_to('Most recents', index_frameworks_path(language),
-               class: "nav-link btn btn-outline-success px-4 #{active(action, 'index')} "),
-       link_to('Most hours', top_frameworks_path(language),
-               class: "nav-link btn btn-outline-success px-4 #{active(action, 'top')}")]
-
-    else
-
-      [link_to('Most recents', all_frameworks_path,
-               class: "nav-link btn btn-outline-success px-4 #{active(action, 'index2')} "),
-       link_to('Most hours', top_overall_path,
-               class: "nav-link btn btn-outline-success px-4 #{active(action, 'top2')}")]
+      return [profile_img(100),
+              link_to('Create a new Framework',
+                      framework_new_path('other'), class: 'btn btn-success p-3')]
     end
+
+    if !language.nil? && !res
+      return [image_tag(language.icon,
+                        class: 'rounded-circle align-self-center', size: 100),
+              link_to('Add a new Frame/Lib',
+                      framework_new_path(language), class: 'btn btn-success p-3')]
+    end
+
+    if !language.nil? && res
+      return [link_to('Most recents', index_frameworks_path(language),
+                      class: "nav-link btn btn-outline-success px-4 #{active(action, 'index')} "),
+              link_to('Most hours', top_frameworks_path(language),
+                      class: "nav-link btn btn-outline-success px-4 #{active(action, 'top')}")]
+    end
+
+    [link_to('Most recents', all_frameworks_path,
+             class: "nav-link btn btn-outline-success px-4 #{active(action, 'index2')} "),
+     link_to('Most hours', top_overall_path,
+             class: "nav-link btn btn-outline-success px-4 #{active(action, 'top2')}")]
   end
-  # rubocop:enable Metrics/PerceivedComplexity
 
   def language_get_params(language, lang)
     language.nil? ? lang.language : language
