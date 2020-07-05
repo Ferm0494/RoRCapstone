@@ -25,7 +25,7 @@ module ApplicationHelper
     return 'active' if comparer.eql?(action)
   end
 
-  # rubocop: disable  Metrics/PerceivedComplexity
+  # rubocop:disable  Metrics/PerceivedComplexity
 
   def lang(language, res = false, action = nil)
     if language.nil? && !res
@@ -53,7 +53,7 @@ module ApplicationHelper
                class: "nav-link btn btn-outline-success px-4 #{active(action, 'top2')}")]
     end
   end
-  # rubocop: enable Metrics/PerceivedComplexity
+  # rubocop:enable Metrics/PerceivedComplexity
 
   def language_get_params(language, lang)
     language.nil? ? lang.language : language
